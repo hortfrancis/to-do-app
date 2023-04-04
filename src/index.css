@@ -1,0 +1,155 @@
+* {
+  font-family: 'Signika Negative', sans-serif;
+  color: #042940;
+}
+
+html {
+  background-color: #D6D58E;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+/* Task component */
+
+.Task {
+  background-color: #9FC131;
+  margin: 1rem;
+  border-radius: 10px;
+  max-width: 30rem;
+  margin: auto;
+}
+
+.task-container {
+  margin: 1rem;
+  margin-bottom: 0;
+  background-color: #9FC131;
+  min-height: 10rem;
+
+  /*  Align UI items vertically  */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.description {
+  display: inline-block;
+  font-size: 1.8rem;
+  background-color: #DBF227;
+  border-radius: 10px;
+  padding: 0.4em;
+  margin-top: 1rem;
+  min-width: 14em;
+}
+
+/*  Default syling for all buttons  */
+button {
+  margin: 1em 1em;
+  border: none;
+  background-color: #005C53;
+  color: #DBF227;
+  font-size: 1.2rem;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+}
+
+.delete-button {
+  background-color: firebrick;
+  color: #DBF227;
+}
+
+.done-button,
+#add-task-button {
+  background-color: #042940;
+  color: #DBF227;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #9FC131;
+  background-color: #D6D58E;
+  font-style: italic;
+
+}
+
+/* UI feedback when buttons are pressed */
+button:active,
+#add-task-button:active {
+  background-color: #DBF227;
+  color: #005C53;
+}
+
+input {
+  margin: 1em 1em;
+  border: none;
+  background-color: #005C53;
+  color: #DBF227;
+  font-size: 1.2rem;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+}
+
+.edit-description-input:focus {
+  background-color: #042940;
+  color: #DBF227;
+}
+
+input:focus {
+  outline: none;
+  background-color: #9FC131;
+
+  color: #005C53;
+}
+
+input::placeholder {
+  color: #D6D58E;
+}
+
+input:focus::placeholder {
+  color: #005C53;
+}
+
+/* AddTask component */
+
+#add-task-form {
+  margin-top: 3rem;
+}
+
+#add-task-form>* {
+  display: block;
+  margin: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+input#newTaskDescription {
+  width: 25rem;
+
+}
