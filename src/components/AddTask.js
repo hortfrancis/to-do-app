@@ -1,13 +1,12 @@
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTask } from '../store/taskListSlice';
 
-import { useState } from 'react';
-
 export default function AddTask() {
 
-    const [description, setDescription] = useState('');
-
     const dispatch = useDispatch();
+
+    const [description, setDescription] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -30,7 +29,10 @@ export default function AddTask() {
     return (
         <form id="add-task-form" onSubmit={handleSubmit} autocomplete="off">
             <label htmlFor="newTaskDescription">Add a new task:</label>
-            <input id="newTaskDescription" type="text" value={description} onChange={handleDescriptionChange} placeholder="Learn Redux.js, etc" />
+            <input id="newTaskDescription" 
+                type="text" value={description} 
+                onChange={handleDescriptionChange} 
+                placeholder="Learn Redux.js, etc" />
             <button type="submit" id="add-task-button">Add Task</button>
         </form>
     )

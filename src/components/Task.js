@@ -1,20 +1,16 @@
-import React, { useEffect } from 'react';
-
-import { useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-
 import { removeTask, editTask } from '../store/taskListSlice';
 
 export default function Task(props) {
+
+    const dispatch = useDispatch();
 
     // Determines whether to show the edit form or not
     const [isEditing, setIsEditing] = useState(false);
 
     // Automatically populates the edit form with the current description from the store
     const [description, setDescription] = useState(props.task.description);
-
-    const dispatch = useDispatch();
 
     /* Event handlers for buttons */
 
@@ -72,34 +68,26 @@ export default function Task(props) {
 
 
     return (
-
         <div className="Task">
-
             <div className="task-container">
 
                 {/* Using conditional rendering with a ternary */}
                 {isEditing ? (
 
                     <form className="edit-form" onSubmit={handleEditFormSubmit} autocomplete="off">
-
                         <input type="text" class="edit-description-input" value={description} onChange={handleDescriptionChange} />
                         <button type="submit" className="save-button">Save</button>
-
                     </form>
-
                 ) : (
-
                     <div>
                         <span className={`description ${props.task.completed ? 'completed' : ''}`} onClick={handleEdit}>{description}</span>
                         <button type="button" className="edit-button" onClick={handleEdit}>Edit</button>
                         <button type="button" className="delete-button" onClick={handleDeleteButton}>Delete</button>
                         <button type="button" className="done-button" onClick={handleDoneButton}>Done!</button>
-
                     </div>
                 )}
 
-            </div>
-            
+            </div>          
         </div>
     );
 }

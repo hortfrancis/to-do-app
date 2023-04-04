@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-
 import Task from './components/Task';
 import AddTask from './components/AddTask.js';
 
@@ -8,9 +7,7 @@ function App() {
   const taskList = useSelector((state) => state.taskList.list);
 
   return (
-
     <div className="App">
-
       <h1>To Do</h1>
 
       {/* Task components */}
